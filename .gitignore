@@ -1,0 +1,12 @@
+build
+coverage
+node_modules
+.env
+.env.development
+.npmrc
+
+yarn-debug.log
+yarn-error.log
+
+.DS_Store
+.vscode
