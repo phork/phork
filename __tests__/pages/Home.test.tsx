@@ -5,6 +5,7 @@ import { render } from '../utils';
 jest.mock('components/CreditsButton', () => {
   return {
     CreditsButton: () => 'CreditsButton',
+    Timeline: () => 'Timeline',
   };
 });
 
@@ -14,10 +15,8 @@ describe('<Home />', () => {
     expect(getByText('CreditsButton')).toBeTruthy();
   });
 
-  it('should render the Phork/it link', () => {
-    const { getByTitle } = render(<Home />);
-
-    expect(getByTitle('Phork/it component library')).toBeTruthy();
-    expect(getByTitle('Phork/it component library').closest('a')).toHaveAttribute('href', 'https://phorkit.phork.org');
+  it('should render the timeline', () => {
+    const { getByText } = render(<Home />);
+    expect(getByText('Timeline')).toBeTruthy();
   });
 });

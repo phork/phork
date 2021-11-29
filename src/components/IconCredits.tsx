@@ -41,11 +41,32 @@ export const iconCredits: IconCredit[] = [
     src: iconSources.flatIcon,
   },
   {
+    id: 'link',
+    icon: icons.LinkIcon,
+    name: 'Smash Icons',
+    url: 'https://www.flaticon.com/authors/smashicons',
+    src: iconSources.flatIcon,
+  },
+  {
     id: 'notFound',
     icon: icons.NotFoundIcon,
     name: 'Freepik',
     url: 'https://www.flaticon.com/authors/freepik',
     src: iconSources.flatIcon,
+  },
+  {
+    id: 'retired',
+    icon: icons.RetiredIcon,
+    name: 'Phork',
+    src: iconSources.other,
+    url: 'https://phork.org',
+  },
+  {
+    id: 'twitter',
+    icon: icons.TwitterIcon,
+    name: 'Muhammad Haq',
+    url: 'https://freeicons.io/profile/823',
+    src: iconSources.freeIcons,
   },
 ];
 

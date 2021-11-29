@@ -4,8 +4,8 @@ import { ColoredIconButton, Position, Rhythm } from '@phork/phorkit';
 import { APP_NAME } from 'config/strings';
 import { CreditsButton } from 'components/CreditsButton';
 import { PagePaper } from 'components/PagePaper';
+import { Timeline } from 'components/Timeline';
 import { HeartIcon } from 'icons/HeartIcon';
-import { PhorkIcon } from 'icons/PhorkIcon';
 
 export const Home = memo(function Home() {
   return (
@@ -17,21 +17,10 @@ export const Home = memo(function Home() {
       <Fragment>
         <PagePaper flexible role="main" style={{ alignItems: 'center', justifyContent: 'center' }}>
           <Rhythm py={4}>
-            <ColoredIconButton<'a'>
-              as="a"
-              colorId="P10"
-              href="https://phorkit.phork.org"
-              rel="noopener"
-              shape="circle"
-              size={undefined}
-              target="_blank"
-              weight="inline"
-            >
-              <PhorkIcon size={280} title="Phork/it component library" />
-            </ColoredIconButton>
+            <Timeline />
           </Rhythm>
 
-          <Position location="bottom-right" variant="inside">
+          <Position fixed location="bottom-right" variant="inside">
             <Rhythm m={4}>
               <CreditsButton<typeof ColoredIconButton>>
                 <ColoredIconButton colorId="P35" shape="circle" weight="inline">
