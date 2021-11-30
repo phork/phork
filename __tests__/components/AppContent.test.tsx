@@ -7,6 +7,6 @@ describe('<AppContent />', () => {
     const { getByTestId } = render(<AppContent data-testid="content" />);
 
     const content = getByTestId('content');
-    expect(content).toHaveAttribute('tabIndex', '0');
+    expect(content).toHaveAttribute('tabIndex', '-1');
   });
 });

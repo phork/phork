@@ -13,7 +13,7 @@ export const LogoModal = ({ id: initId, ...props }: LogoModalProps): JSX.Element
       <ModalBody scrollable key="content">
         <Flex full alignItems="center" justifyContent="center">
           <Rhythm mb={12} mt={4}>
-            <PhorkIcon size={220} />
+            <PhorkIcon size={220} title="Phork logo" />
           </Rhythm>
         </Flex>
       </ModalBody>

@@ -51,7 +51,7 @@ export const TimelineHeader = (): JSX.Element => {
 
   return (
     <Container themeId={themeId}>
-      <TimelineIcon height={40} />
+      <TimelineIcon height={40} title="The Phork Timeline" />
       <Position location="right-center" variant="inside">
         <ButtonGroup spacing="comfy">
           <ColoredIconButton colorId={iconColor} key="theme" onClick={handleThemeClick} shape="circle" weight="inline">

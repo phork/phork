@@ -2,21 +2,15 @@ import '@testing-library/jest-dom/extend-expect';
 import { Home } from 'pages/Home/Home';
 import { render } from '../utils';
 
-jest.mock('components/CreditsButton', () => {
+jest.mock('components/TimelineHeader', () => {
   return {
-    CreditsButton: () => 'CreditsButton',
-    Timeline: () => 'Timeline',
+    TimelineHeader: () => 'TimelineHeader',
   };
 });
 
 describe('<Home />', () => {
-  it('should render credits button', () => {
+  it('should render the timeline header', () => {
     const { getByText } = render(<Home />);
-    expect(getByText('CreditsButton')).toBeTruthy();
-  });
-
-  it('should render the timeline', () => {
-    const { getByText } = render(<Home />);
-    expect(getByText('Timeline')).toBeTruthy();
+    expect(getByText('TimelineHeader')).toBeTruthy();
   });
 });
