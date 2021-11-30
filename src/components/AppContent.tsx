@@ -9,9 +9,9 @@ import Home from 'pages/Home';
 
 const ViewportPaper = styled(Paper)`
   width: 100vw;
-  height: 100% !important;
-  min-height: 100% !important;
-  max-height: 100% !important;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
 `;
 
 export type AppContentProps = Omit<PaperProps, 'children' | 'color' | 'scrollable'>;
