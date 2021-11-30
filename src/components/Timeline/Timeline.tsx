@@ -154,6 +154,7 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
         position={itemPosition}
         tags={[
           { id: 'php', label: 'PHP 5' },
+          { id: 'jquery', label: 'jQuery' },
           { id: 'open', label: 'Open source' },
           { id: 'retired', label: 'Retired' },
         ]}

@@ -63,13 +63,7 @@ export const TimelineItem = ({
         <Flex alignItems="flex-start" direction="row" justifyContent="space-between">
           <div>
             <Typography variants="medium-caps">{month}</Typography> - {children}
-            {tags && (
-              <Rhythm mt={3}>
-                <TagGroup shape="pill" size="xsmall" tags={tags} weight="shaded" />
-              </Rhythm>
-            )}
           </div>
-
           {links && (
             <Rhythm ml={2}>
               <ButtonGroup spacing="cozy">
@@ -107,6 +101,12 @@ export const TimelineItem = ({
             </Rhythm>
           )}
         </Flex>
+
+        {tags && (
+          <Rhythm mt={3}>
+            <TagGroup shape="pill" size="xsmall" tags={tags} weight="shaded" />
+          </Rhythm>
+        )}
       </TimelineItemPaper>
     </TimelineMarkerItem>
   );
