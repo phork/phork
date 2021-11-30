@@ -1,5 +1,12 @@
 import { viewports } from 'config/viewports';
-import { PAPER_TOP_OFFSET, PAPER_SIDE_OFFSET, SMALL_PAPER_TOP_OFFSET, SMALL_PAPER_SIDE_OFFSET } from '../config/sizes';
+import {
+  PAPER_TOP_OFFSET,
+  PAPER_SIDE_OFFSET,
+  SMALL_PAPER_TOP_OFFSET,
+  SMALL_PAPER_SIDE_OFFSET,
+  PAPER_BOTTOM_OFFSET,
+  SMALL_PAPER_BOTTOM_OFFSET,
+} from '../config/sizes';
 
 export const showMobileLayout = (width?: number): boolean => width !== undefined && width <= viewports.small.max;
 export const showDesktopLayout = (width?: number): boolean => !width || width >= viewports.medium.min;
@@ -12,6 +19,9 @@ export const showLandscapeLayout = (width?: number, height?: number): boolean | 
 
 export const getPaperTopOffset = (width: number): number =>
   width <= viewports.small.max ? SMALL_PAPER_TOP_OFFSET : PAPER_TOP_OFFSET;
+
+export const getPaperBottomOffset = (width: number): number =>
+  width <= viewports.small.max ? SMALL_PAPER_BOTTOM_OFFSET : PAPER_BOTTOM_OFFSET;
 
 export const getPaperSideOffset = (width: number): number =>
   width <= viewports.small.max ? SMALL_PAPER_SIDE_OFFSET : PAPER_SIDE_OFFSET;

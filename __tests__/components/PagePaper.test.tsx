@@ -4,7 +4,7 @@ import { render } from '../utils';
 describe('<PagePaper />', () => {
   it('should render the page content', () => {
     const { getByText } = render(
-      <PagePaper autoHeight centered color="primary">
+      <PagePaper autoHeight color="primary">
         Content!
       </PagePaper>,
     );

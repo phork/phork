@@ -1704,10 +1704,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@phork/phorkit@^13.2.0":
-  version "13.2.0"
-  resolved "https://registry.yarnpkg.com/@phork/phorkit/-/phorkit-13.2.0.tgz#5518d1b36a52a449a26a04d24c08eec0d9b48fc4"
-  integrity sha512-kUOzHcRBIx5lCvTulGXaXD3dLq57w1b1D5btJ2z5CEkD4+a9QEp4MvZVHlnjiJrQUEtToSkH9HjqLXk2LI4L+A==
+"@phork/phorkit@^14.0.1":
+  version "14.0.1"
+  resolved "https://registry.yarnpkg.com/@phork/phorkit/-/phorkit-14.0.1.tgz#9993e6b7538693710bfb8836ae3a321c24583b08"
+  integrity sha512-tkOF0ivAVg8Ri76dxVyoHr5V0Wl3YdHtSsuPFAW1MpmBSThpn03+5p1TYXEPcDgCGjCwiEiVyzwTbN5CECClNA==
   dependencies:
     "@emotion/css" "^11.5.0"
     "@emotion/react" "^11.5.0"

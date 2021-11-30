@@ -1,7 +1,10 @@
 export { GithubIcon } from './GithubIcon';
 export { HeartIcon } from './HeartIcon';
 export { LinkIcon } from './LinkIcon';
+export { MoonIcon } from './MoonIcon';
 export { NotFoundIcon } from './NotFoundIcon';
 export { PhorkIcon } from './PhorkIcon';
 export { RetiredIcon } from './RetiredIcon';
+export { SunIcon } from './SunIcon';
+export { TimelineIcon } from './TimelineIcon';
 export { TwitterIcon } from './TwitterIcon';

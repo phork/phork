@@ -20,12 +20,12 @@ export type LinkItem = {
   icon: React.ReactElement;
 } & (
   | {
-      retired?: never;
-      url: string;
+      onClick?: () => void;
+      url?: never;
     }
   | {
-      retired: true;
-      url?: never;
+      onClick?: never;
+      url?: string;
     }
 );
 
@@ -42,6 +42,7 @@ export const TimelineItem = ({
   colorId,
   links,
   month,
+  position = 'right-center',
   tags,
   themeId: initThemeId,
   ...props
@@ -53,10 +54,11 @@ export const TimelineItem = ({
     '--timeline-item-connector-color': themes[themeId]['primary-palette-border-color'],
     '--timeline-item-state-color': color,
     '--status-bubble-triangle-color': color,
+    flex: 1,
   } as React.CSSProperties;
 
   return (
-    <TimelineMarkerItem squared unbordered unthemed style={style} triangleSize={8} {...props}>
+    <TimelineMarkerItem squared unbordered unthemed position={position} style={style} triangleSize={8} {...props}>
       <TimelineItemPaper borderColor={color} color="tertiary">
         <Flex alignItems="flex-start" direction="row" justifyContent="space-between">
           <div>
@@ -69,27 +71,40 @@ export const TimelineItem = ({
           </div>
 
           {links && (
-            <ButtonGroup spacing="cozy">
-              {links.map(({ id, icon, retired, url }) =>
-                retired ? (
-                  <IconButton<'a'> disabled as="a" color={themeId === 'dark' ? 'white' : 'black'} key={id}>
-                    {icon}
-                  </IconButton>
-                ) : (
-                  <ColoredIconButton<'a'>
-                    as="a"
-                    colorId={colorId}
-                    disabled={retired}
-                    href={url}
-                    key={id}
-                    target="_blank"
-                    weight="inline"
-                  >
-                    {icon}
-                  </ColoredIconButton>
-                ),
-              )}
-            </ButtonGroup>
+            <Rhythm ml={2}>
+              <ButtonGroup spacing="cozy">
+                {links.map(({ id, icon, onClick, url }) => {
+                  if (onClick) {
+                    return (
+                      <ColoredIconButton colorId={colorId} key={id} onClick={onClick} weight="inline">
+                        {icon}
+                      </ColoredIconButton>
+                    );
+                  }
+
+                  if (url) {
+                    return (
+                      <ColoredIconButton<'a'>
+                        as="a"
+                        colorId={colorId}
+                        href={url}
+                        key={id}
+                        target="_blank"
+                        weight="inline"
+                      >
+                        {icon}
+                      </ColoredIconButton>
+                    );
+                  }
+
+                  return (
+                    <IconButton<'a'> disabled as="a" color={themeId === 'dark' ? 'white' : 'black'} key={id}>
+                      {icon}
+                    </IconButton>
+                  );
+                })}
+              </ButtonGroup>
+            </Rhythm>
           )}
         </Flex>
       </TimelineItemPaper>

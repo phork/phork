@@ -1,11 +1,8 @@
-import './wdyr';
-
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import '@phork/phorkit/styles/common.css';
 import '@phork/phorkit/styles/fonts.css';
 import '@phork/phorkit/styles/normalize.css';
-import * as serviceWorker from './serviceWorkerRegistration';
 import 'styles/global.css';
 
 const App = React.lazy(() => import('components/App').then(({ App }) => ({ default: App })));
@@ -42,5 +39,3 @@ ReactDOM.render(
   </React.Suspense>,
   document.getElementById('root'),
 );
-
-serviceWorker.register();

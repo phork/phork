@@ -21,7 +21,7 @@ export const AppContent = (props: AppContentProps): React.ReactElement => {
     <Router>
       <SizeProvider observe decimalPlaces={0}>
         {ref => (
-          <ViewportPaper scrollable color="primary" ref={ref} {...props}>
+          <ViewportPaper scrollable color="primary" ref={ref} tabIndex={-1} {...props}>
             <ErrorBoundary variant="page">
               <Suspense fallback={<LineLoader fixed position="top" />}>
                 <Switch>

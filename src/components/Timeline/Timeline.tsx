@@ -1,11 +1,14 @@
 import styled from '@emotion/styled';
-import { ThemeProps, StraddledTimeline, useThemeId, ThemeColorIds, Typography } from '@phork/phorkit';
+import { ThemeProps, StraddledTimeline, useThemeId, ThemeColorIds, Typography, EyeIcon } from '@phork/phorkit';
+import { useOpenLogoModal } from 'hooks/useOpenLogoModal';
 import { GithubIcon } from 'icons/GithubIcon';
 import { LinkIcon } from 'icons/LinkIcon';
 import { RetiredIcon } from 'icons/RetiredIcon';
 import { TwitterIcon } from 'icons/TwitterIcon';
 import { TimelineItem } from './TimelineItem';
 import { TimelineLabel } from './TimelineLabel';
+
+const SMALL_TIMELINE_BREAKPOINT = 520;
 
 type TimelineProps = Pick<ThemeProps, 'themeId'> & {
   width?: number;
@@ -18,13 +21,22 @@ const StyledTimeline = styled(StraddledTimeline)`
 
 export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): JSX.Element => {
   const themeId = useThemeId(initThemeId);
-  const leftWidth = 120;
+  const leftWidth = width < SMALL_TIMELINE_BREAKPOINT ? 0 : 116;
   const rightWidth = width - leftWidth;
+
+  const labelWidth = leftWidth || rightWidth;
+  const labelPosition = leftWidth ? 'left-center' : 'right-center';
+
+  const itemWidth = rightWidth;
+  const itemPosition = 'right-center';
+
+  const { handleClick: openLogoModal } = useOpenLogoModal();
+
   let counter = 1;
 
   return (
     <StyledTimeline leftWidth={leftWidth} rightWidth={rightWidth} spacing="cozy">
-      <TimelineLabel first themeId={themeId} width={leftWidth}>
+      <TimelineLabel first position={labelPosition} themeId={themeId} width={labelWidth}>
         2006
       </TimelineLabel>
       <TimelineItem
@@ -33,20 +45,20 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           {
             id: 'retired',
             icon: <RetiredIcon size={20} />,
-            retired: true,
           },
         ]}
         month="January"
+        position={itemPosition}
         tags={[
           { id: 'php', label: 'PHP 5' },
           { id: 'retired', label: 'Retired' },
         ]}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Started developing the Phork CMS for internal use only
       </TimelineItem>
-      <TimelineLabel themeId={themeId} width={leftWidth}>
+      <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
         2009
       </TimelineLabel>
       <TimelineItem
@@ -59,8 +71,9 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           },
         ]}
         month="September"
+        position={itemPosition}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Registered <Typography variants="italic">phorklabs.com</Typography>
       </TimelineItem>
@@ -79,17 +92,18 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           },
         ]}
         month="September"
+        position={itemPosition}
         tags={[
           { id: 'php', label: 'PHP 5' },
           { id: 'open', label: 'Open source' },
           { id: 'retired', label: 'Retired' },
         ]}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Released the Phork Framework
       </TimelineItem>
-      <TimelineLabel themeId={themeId} width={leftWidth}>
+      <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
         2010
       </TimelineLabel>
       <TimelineItem
@@ -102,12 +116,13 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           },
         ]}
         month="July"
+        position={itemPosition}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Registered <Typography variants="italic">phork.org</Typography>
       </TimelineItem>
-      <TimelineLabel themeId={themeId} width={leftWidth}>
+      <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
         2011
       </TimelineLabel>
       <TimelineItem
@@ -120,8 +135,9 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           },
         ]}
         month="March"
+        position={itemPosition}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Registered <Typography variants="italic">phorkit.org</Typography>
       </TimelineItem>
@@ -135,17 +151,18 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           },
         ]}
         month="March"
+        position={itemPosition}
         tags={[
           { id: 'php', label: 'PHP 5' },
           { id: 'open', label: 'Open source' },
           { id: 'retired', label: 'Retired' },
         ]}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Released Phork/it (legacy)
       </TimelineItem>
-      <TimelineLabel themeId={themeId} width={leftWidth}>
+      <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
         2013
       </TimelineLabel>
       <TimelineItem
@@ -163,17 +180,18 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           },
         ]}
         month="July"
+        position={itemPosition}
         tags={[
           { id: 'php', label: 'PHP 5' },
           { id: 'open', label: 'Open source' },
           { id: 'retired', label: 'Retired' },
         ]}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Released the Microphork framework
       </TimelineItem>
-      <TimelineLabel themeId={themeId} width={leftWidth}>
+      <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
         2014
       </TimelineLabel>
       <TimelineItem
@@ -186,12 +204,13 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           },
         ]}
         month="February"
+        position={itemPosition}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Registered <Typography variants="italic">phork.net</Typography>
       </TimelineItem>
-      <TimelineLabel themeId={themeId} width={leftWidth}>
+      <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
         2019
       </TimelineLabel>
       <TimelineItem
@@ -209,17 +228,18 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           },
         ]}
         month="June"
+        position={itemPosition}
         tags={[
           { id: 'react', label: 'React' },
           { id: 'typescript', label: 'TypeScript' },
           { id: 'open', label: 'Open source' },
         ]}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Started developing Phork/it
       </TimelineItem>
-      <TimelineLabel themeId={themeId} width={leftWidth}>
+      <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
         2020
       </TimelineLabel>
       <TimelineItem
@@ -232,12 +252,13 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           },
         ]}
         month="June"
+        position={itemPosition}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Registered <Typography variants="italic">phork.works</Typography>
       </TimelineItem>
-      <TimelineLabel themeId={themeId} width={leftWidth}>
+      <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
         2021
       </TimelineLabel>
       <TimelineItem
@@ -255,22 +276,31 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           },
         ]}
         month="March"
+        position={itemPosition}
         tags={[
           { id: 'react', label: 'React' },
           { id: 'typescript', label: 'TypeScript' },
           { id: 'open', label: 'Open source' },
         ]}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Released Phork/it
       </TimelineItem>
       <TimelineItem
         last
         colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
+        links={[
+          {
+            id: 'logo',
+            icon: <EyeIcon size={16} />,
+            onClick: openLogoModal,
+          },
+        ]}
         month="November"
+        position={itemPosition}
         themeId={themeId}
-        width={rightWidth}
+        width={itemWidth}
       >
         Redesigned the Phork logo
       </TimelineItem>

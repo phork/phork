@@ -48,6 +48,13 @@ export const iconCredits: IconCredit[] = [
     src: iconSources.flatIcon,
   },
   {
+    id: 'moon',
+    icon: icons.MoonIcon,
+    name: 'Freepik',
+    url: 'https://www.flaticon.com/authors/freepik',
+    src: iconSources.flatIcon,
+  },
+  {
     id: 'notFound',
     icon: icons.NotFoundIcon,
     name: 'Freepik',
@@ -60,6 +67,13 @@ export const iconCredits: IconCredit[] = [
     name: 'Phork',
     src: iconSources.other,
     url: 'https://phork.org',
+  },
+  {
+    id: 'sun',
+    icon: icons.SunIcon,
+    name: 'bqlqn',
+    url: 'https://www.flaticon.com/authors/bqlqn',
+    src: iconSources.flatIcon,
   },
   {
     id: 'twitter',

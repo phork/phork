@@ -8,11 +8,16 @@ import {
   Typography,
 } from '@phork/phorkit';
 
-type TimelineLabelProps = Pick<TimelineDividerItemProps, 'first' | 'last' | 'width' | 'themeId'> & {
+type TimelineLabelProps = Pick<TimelineDividerItemProps, 'first' | 'last' | 'position' | 'width' | 'themeId'> & {
   children: React.ReactChild | React.ReactFragment;
 };
 
-export const TimelineLabel = ({ children, themeId: initThemeId, ...props }: TimelineLabelProps): JSX.Element => {
+export const TimelineLabel = ({
+  children,
+  position = 'left-center',
+  themeId: initThemeId,
+  ...props
+}: TimelineLabelProps): JSX.Element => {
   const themeId = useThemeId(initThemeId);
 
   const style = {
@@ -21,7 +26,7 @@ export const TimelineLabel = ({ children, themeId: initThemeId, ...props }: Time
   } as React.CSSProperties;
 
   return (
-    <TimelineDividerItem squared unbordered unthemed position="left-center" style={style} triangleSize={8} {...props}>
+    <TimelineDividerItem squared unbordered unthemed position={position} style={style} triangleSize={8} {...props}>
       <Paper color="tertiary">
         <Rhythm p={3}>
           <Typography<'div'> align="center" as="div" size="xlarge" weight="bold">

@@ -31,7 +31,7 @@ jobs:
       - name: Deploy the site
         uses: burnett01/rsync-deployments@4.1
         with:
-          switches: -avz --delete
+          switches: -avz --delete --exclude="archives"
           path: build/
           remote_path: ${{ secrets.DEPLOY_PATH }}
           remote_host: ${{ secrets.DEPLOY_HOST }}
