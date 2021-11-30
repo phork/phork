@@ -293,7 +293,7 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
         links={[
           {
             id: 'logo',
-            icon: <EyeIcon size={16} />,
+            icon: <EyeIcon size={20} />,
             onClick: openLogoModal,
           },
         ]}
