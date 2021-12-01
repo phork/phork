@@ -28,6 +28,7 @@ module.exports = {
     '^pages(.*)$': '<rootDir>/src/pages$1',
     '^postcss(.*)$': '<rootDir>/src/postcss$1',
     '^styles(.*)$': '<rootDir>/src/styles$1',
+    '^types(.*)$': '<rootDir>/src/types$1',
     '^utils(.*)$': '<rootDir>/src/utils$1',
     '^__mocks__/(.*)$': '<rootDir>/__mocks__/$1',
     '\\.css$': '<rootDir>/__mocks__/style.mock.js',

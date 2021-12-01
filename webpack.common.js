@@ -126,6 +126,7 @@ const configuration = {
       pages$: path.join(src, 'pages'),
       postcss$: path.join(src, 'postcss'),
       styles$: path.join(src, 'styles'),
+      types$: path.join(src, 'types'),
       utils$: path.join(src, 'utils'),
     },
     extensions: ['.ts', '.tsx', '.js', '.json'],

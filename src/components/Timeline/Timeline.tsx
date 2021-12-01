@@ -30,7 +30,8 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
   const itemWidth = rightWidth;
   const itemPosition = 'right-center';
 
-  const { handleClick: openLogoModal } = useOpenLogoModal();
+  const { handleClick: openCurrentLogoModal } = useOpenLogoModal({ generation: 'current' });
+  const { handleClick: openRetroLogoModal } = useOpenLogoModal({ generation: 'retro' });
 
   let counter = 1;
 
@@ -65,13 +66,14 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
         colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
         links={[
           {
-            id: 'demo',
+            id: 'destination',
             icon: <LinkIcon size={16} />,
             url: 'http://phorklabs.com',
           },
         ]}
         month="September"
         position={itemPosition}
+        tags={[{ id: 'retired', label: 'Retired' }]}
         themeId={themeId}
         width={itemWidth}
       >
@@ -91,7 +93,7 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
             url: 'https://github.com/phork/framework',
           },
         ]}
-        month="September"
+        month="October"
         position={itemPosition}
         tags={[
           { id: 'php', label: 'PHP 5' },
@@ -110,7 +112,7 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
         colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
         links={[
           {
-            id: 'demo',
+            id: 'destination',
             icon: <LinkIcon size={16} />,
             url: 'https://phork.org',
           },
@@ -129,17 +131,18 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
         colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
         links={[
           {
-            id: 'demo',
-            icon: <LinkIcon size={16} />,
-            url: 'https://phorkit.org',
+            id: 'logo',
+            icon: <EyeIcon size={20} />,
+            onClick: openRetroLogoModal,
           },
         ]}
-        month="March"
+        month="February"
         position={itemPosition}
+        tags={[{ id: 'retired', label: 'Retired' }]}
         themeId={themeId}
         width={itemWidth}
       >
-        Registered <Typography variants="italic">phorkit.org</Typography>
+        Redesigned the Phork logo
       </TimelineItem>
       <TimelineItem
         colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
@@ -190,26 +193,7 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
         themeId={themeId}
         width={itemWidth}
       >
-        Released the Microphork framework
-      </TimelineItem>
-      <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
-        2014
-      </TimelineLabel>
-      <TimelineItem
-        colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
-        links={[
-          {
-            id: 'demo',
-            icon: <LinkIcon size={16} />,
-            url: 'http://phork.met',
-          },
-        ]}
-        month="February"
-        position={itemPosition}
-        themeId={themeId}
-        width={itemWidth}
-      >
-        Registered <Typography variants="italic">phork.net</Typography>
+        Released the Microphork Framework
       </TimelineItem>
       <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
         2019
@@ -223,7 +207,7 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
             url: 'https://github.com/phork/phorkit',
           },
           {
-            id: 'demo',
+            id: 'destination',
             icon: <LinkIcon size={16} />,
             url: 'https://phorkit.phork.org',
           },
@@ -247,7 +231,7 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
         colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
         links={[
           {
-            id: 'demo',
+            id: 'destination',
             icon: <LinkIcon size={16} />,
             url: 'https://phork.works',
           },
@@ -271,7 +255,7 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
             url: 'https://github.com/phork/phorkit',
           },
           {
-            id: 'demo',
+            id: 'destination',
             icon: <LinkIcon size={16} />,
             url: 'https://phorkit.phork.org',
           },
@@ -295,15 +279,44 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           {
             id: 'logo',
             icon: <EyeIcon size={20} />,
-            onClick: openLogoModal,
+            onClick: openCurrentLogoModal,
           },
         ]}
-        month="November"
+        month="October"
         position={itemPosition}
         themeId={themeId}
         width={itemWidth}
       >
         Redesigned the Phork logo
+      </TimelineItem>
+      <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
+        NOW
+      </TimelineLabel>
+      <TimelineItem
+        colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
+        links={[
+          {
+            id: 'github',
+            icon: <GithubIcon size={19} />,
+            url: 'https://github.com/phork/phorkit',
+          },
+          {
+            id: 'destination',
+            icon: <LinkIcon size={16} />,
+            url: 'https://phorkit.phork.org',
+          },
+        ]}
+        month="March"
+        position={itemPosition}
+        tags={[
+          { id: 'react', label: 'React' },
+          { id: 'typescript', label: 'TypeScript' },
+          { id: 'open', label: 'Open source' },
+        ]}
+        themeId={themeId}
+        width={itemWidth}
+      >
+        Phork/it development continues
       </TimelineItem>
     </StyledTimeline>
   );

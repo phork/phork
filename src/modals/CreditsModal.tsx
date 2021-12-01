@@ -1,6 +1,17 @@
 import { useRef } from 'react';
 import { v4 as uuid } from 'uuid';
-import { Flex, Link, Modal, ModalBody, ModalFooter, ModalHeader, Typography, Rhythm, ModalProps } from '@phork/phorkit';
+import {
+  Flex,
+  Link,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalProps,
+  Rhythm,
+  Typography,
+  TypographyWithSvg,
+} from '@phork/phorkit';
 import { IconCredits } from 'components/IconCredits';
 import { HeartIcon } from 'icons/HeartIcon';
 
@@ -22,15 +33,17 @@ export const CreditsModal = ({ id: initId, ...props }: CreditsModalProps): JSX.E
           <Rhythm mx={1} my={1}>
             <Flex wrap alignItems="center" direction="row" justifyContent="space-between">
               <Rhythm grouped mr={2}>
-                {version ? ` v${version}` : null}
+                <Link href="https://github.com/phork/phork" rel="noopener" target="_blank">
+                  {version ? `v${version}` : 'Source'}
+                </Link>
               </Rhythm>
 
-              <Typography as={Flex} justifyContent="center" variants="line-height-comfy">
+              <Typography alignItems="center" as={Flex}>
                 Built with love
                 <Rhythm mx={1}>
-                  <Typography color="danger">
+                  <TypographyWithSvg color="danger">
                     <HeartIcon size={18} />
-                  </Typography>
+                  </TypographyWithSvg>
                 </Rhythm>
                 and
                 <Rhythm ml={1}>

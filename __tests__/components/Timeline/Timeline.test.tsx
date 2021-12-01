@@ -1,5 +1,5 @@
 import { Timeline } from 'components/Timeline';
-import { render } from '../utils';
+import { render } from '../../utils';
 
 describe('<Timeline />', () => {
   it('should render the timeline', () => {
@@ -10,9 +10,9 @@ describe('<Timeline />', () => {
     expect(getByText('2010')).toBeTruthy();
     expect(getByText('2011')).toBeTruthy();
     expect(getByText('2013')).toBeTruthy();
-    expect(getByText('2014')).toBeTruthy();
     expect(getByText('2019')).toBeTruthy();
     expect(getByText('2020')).toBeTruthy();
     expect(getByText('2021')).toBeTruthy();
+    expect(getByText('NOW')).toBeTruthy();
   });
 });

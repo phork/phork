@@ -3,6 +3,7 @@ export { HeartIcon } from './HeartIcon';
 export { LinkIcon } from './LinkIcon';
 export { MoonIcon } from './MoonIcon';
 export { NotFoundIcon } from './NotFoundIcon';
+export { PhorkRetroIcon } from './PhorkRetroIcon';
 export { PhorkIcon } from './PhorkIcon';
 export { RetiredIcon } from './RetiredIcon';
 export { SunIcon } from './SunIcon';
