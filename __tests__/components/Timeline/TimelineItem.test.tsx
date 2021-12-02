@@ -29,8 +29,8 @@ describe('<TimelineItem />', () => {
       </TimelineItem>,
     );
 
-    expect(getByText('February')).toBeTruthy();
-    expect(getByText('- Released the Phork Framework')).toBeTruthy();
+    expect(getByText('February -')).toBeTruthy();
+    expect(getByText('Released the Phork Framework')).toBeTruthy();
     expect(getByText('React')).toBeTruthy();
     expect(getByText('TypeScript')).toBeTruthy();
     expect(getByText('Open source')).toBeTruthy();
