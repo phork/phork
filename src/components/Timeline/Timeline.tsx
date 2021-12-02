@@ -306,7 +306,6 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
             url: 'https://phorkit.phork.org',
           },
         ]}
-        month="March"
         position={itemPosition}
         tags={[
           { id: 'react', label: 'React' },

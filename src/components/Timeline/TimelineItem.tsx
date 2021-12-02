@@ -62,7 +62,8 @@ export const TimelineItem = ({
       <TimelineItemPaper borderColor={color} color="tertiary">
         <Flex alignItems="flex-start" direction="row" justifyContent="space-between">
           <div>
-            <Typography variants="medium-caps">{month}</Typography> - {children}
+            {month && <Typography variants="medium-caps">{month} - </Typography>}
+            {children}
           </div>
           {links && (
             <Rhythm ml={2}>
