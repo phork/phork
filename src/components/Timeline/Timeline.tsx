@@ -273,7 +273,6 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
         Released Phork/it
       </TimelineItem>
       <TimelineItem
-        last
         colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
         links={[
           {
@@ -293,6 +292,7 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
         NOW
       </TimelineLabel>
       <TimelineItem
+        last
         colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
         links={[
           {
