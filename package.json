@@ -155,7 +155,7 @@
     "babel-loader": "8.2.2",
     "brotli-webpack-plugin": "^1.1.0",
     "camelcase": "^6.2.0",
-    "commitlint-config-gitmoji": "^2.2.5",
+    "commitlint-config-gitmoji": "^2.2.6",
     "compression-webpack-plugin": "^7.1.1",
     "concat-stream": "^2.0.0",
     "eslint-config-prettier": "^8.2.0",

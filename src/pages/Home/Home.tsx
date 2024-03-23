@@ -11,7 +11,7 @@ export const HomePage = memo(function HomePage() {
       </Helmet>
 
       <PagePaper centered flexible container="page" role="main">
-        <PhorkIcon style={{ maxWidth: '300px', minWidth: '100px' }} width="80%" />
+        <PhorkIcon id="phork" style={{ maxWidth: '300px', minWidth: '100px' }} title="Phork Logo" width="80%" />
       </PagePaper>
     </Fragment>
   );
