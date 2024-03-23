@@ -6,6 +6,7 @@ import { ErrorBoundary, Paper, PaperProps, SizeProvider } from '@phork/phorkit';
 import { LineLoader } from 'components/LineLoader';
 import FourOhFour from 'pages/FourOhFour';
 import Home from 'pages/Home';
+import Timeline from 'pages/Timeline';
 
 const ViewportPaper = styled(Paper)`
   width: 100vw;
@@ -26,6 +27,7 @@ export const AppContent = (props: AppContentProps): React.ReactElement => {
               <Suspense fallback={<LineLoader fixed position="top" />}>
                 <Switch>
                   <Route exact component={Home} path="/" />
+                  <Route exact component={Timeline} path="/timeline" />
                   <Route>
                     <FourOhFour />
                   </Route>
