@@ -75,13 +75,6 @@ export const iconCredits: IconCredit[] = [
     url: 'https://www.flaticon.com/authors/bqlqn',
     src: iconSources.flatIcon,
   },
-  {
-    id: 'twitter',
-    icon: icons.TwitterIcon,
-    name: 'Muhammad Haq',
-    url: 'https://freeicons.io/profile/823',
-    src: iconSources.freeIcons,
-  },
 ];
 
 const IconContainer = styled.div`

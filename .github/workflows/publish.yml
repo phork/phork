@@ -11,22 +11,24 @@ jobs:
 
     steps:
       - name: Git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
 
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '15'
+          node-version: '20'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build the site
-        run: yarn build-deps && yarn build
-        env:
-          NODE_ENV: production
-          NAME: Phork
-          PUBLIC_URL: https://phork.org
+        run: pnpm build-deps && pnpm build
 
       - name: Deploy the site
         uses: burnett01/rsync-deployments@4.1

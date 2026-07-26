@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <meta content="Phork" name="description" />
+    <meta content="#ffffff" name="theme-color" media="(prefers-color-scheme: light)" />
+    <meta content="#000000" name="theme-color" media="(prefers-color-scheme: dark)" />
+    <script>
+      (function () {
+        function applyFavicons(dark) {
+          var s = dark ? 'white' : 'black';
+          var base = '/static/favicon/' + s + '/';
+          var head = document.head;
+
+          function link(rel, href, attrs) {
+            var el = document.createElement('link');
+            el.rel = rel;
+            el.href = href;
+            for (var k in attrs) el.setAttribute(k, attrs[k]);
+            head.appendChild(el);
+          }
+
+          head.querySelectorAll('link[data-favicon]').forEach(function (el) { el.remove(); });
+          link('icon', base + 'favicon-32x32.png', { 'data-favicon': '', type: 'image/png', sizes: '32x32' });
+          link('icon', base + 'favicon-16x16.png', { 'data-favicon': '', type: 'image/png', sizes: '16x16' });
+          link('apple-touch-icon', base + 'apple-touch-icon.png', { 'data-favicon': '', sizes: '180x180' });
+          link('shortcut icon', base + 'favicon.ico', { 'data-favicon': '' });
+          link('manifest', base + 'site.webmanifest', { 'data-favicon': '' });
+        }
+
+        var mq = window.matchMedia('(prefers-color-scheme: dark)');
+        applyFavicons(mq.matches);
+        mq.addEventListener('change', function (e) { applyFavicons(e.matches); });
+      })();
+    </script>
+    <title>Phork</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="/src/index.tsx" type="module"></script>
+  </body>
+</html>

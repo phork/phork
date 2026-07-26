@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect';
 import { TimelineItem } from 'components/Timeline/TimelineItem';
 import { HeartIcon } from 'icons/HeartIcon';
 import { render } from '../../utils';

@@ -1,7 +1,7 @@
 import { Fragment, memo } from 'react';
 import { Helmet } from 'react-helmet';
 import { PagePaper } from 'components/PagePaper';
-import { PhorkIcon } from '../../icons/PhorkIcon';
+import { PhorkVersion3Icon as PhorkIcon } from '../../icons/PhorkVersion3Icon';
 
 export const HomePage = memo(function HomePage() {
   return (
@@ -11,7 +11,7 @@ export const HomePage = memo(function HomePage() {
       </Helmet>
 
       <PagePaper centered flexible container="page" role="main">
-        <PhorkIcon id="phork" style={{ maxWidth: '300px', minWidth: '100px' }} title="Phork Logo" width="80%" />
+        <PhorkIcon id="phork" title="Phork Logo" width="200" />
       </PagePaper>
     </Fragment>
   );

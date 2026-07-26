@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect';
 import { AppContent } from 'components/AppContent';
 import { render } from '../utils';
 

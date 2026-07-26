@@ -14,7 +14,7 @@ describe('<CreditsButton />', () => {
   });
 
   it('should trigger a modal on click', () => {
-    const createModal = jest.fn();
+    const createModal = vi.fn();
 
     const { getByTestId } = render(
       <ModalContext.Provider value={{ createModal } as unknown as ModalContextValue}>

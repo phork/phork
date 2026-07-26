@@ -14,7 +14,7 @@ export type UseOpenLogoModalResponse = {
   handleClick: () => void;
 };
 
-export const useOpenLogoModal = ({ generation = 'current' }: UseOpenLogoModalProps): UseOpenLogoModalResponse => {
+export const useOpenLogoModal = ({ generation = 'third' }: UseOpenLogoModalProps): UseOpenLogoModalResponse => {
   const { createModal } = useContext(ModalContext);
 
   const handleClick = useCallback(() => {

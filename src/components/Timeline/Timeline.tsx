@@ -4,7 +4,6 @@ import { useOpenLogoModal } from 'hooks/useOpenLogoModal';
 import { GithubIcon } from 'icons/GithubIcon';
 import { LinkIcon } from 'icons/LinkIcon';
 import { RetiredIcon } from 'icons/RetiredIcon';
-import { TwitterIcon } from 'icons/TwitterIcon';
 import { TimelineItem } from './TimelineItem';
 import { TimelineLabel } from './TimelineLabel';
 
@@ -30,8 +29,9 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
   const itemWidth = rightWidth;
   const itemPosition = 'right-center';
 
-  const { handleClick: openCurrentLogoModal } = useOpenLogoModal({ generation: 'current' });
-  const { handleClick: openRetroLogoModal } = useOpenLogoModal({ generation: 'retro' });
+  const { handleClick: openThirdLogoModal } = useOpenLogoModal({ generation: 'third' });
+  const { handleClick: openSecondLogoModal } = useOpenLogoModal({ generation: 'second' });
+  const { handleClick: openFirstLogoModal } = useOpenLogoModal({ generation: 'first' });
 
   let counter = 1;
 
@@ -83,11 +83,6 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
         colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
         links={[
           {
-            id: 'twitter',
-            icon: <TwitterIcon size={19} />,
-            url: 'https://twitter.com/phorknews/status/3992050094',
-          },
-          {
             id: 'github',
             icon: <GithubIcon size={19} />,
             url: 'https://github.com/phork/framework',
@@ -133,7 +128,7 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           {
             id: 'logo',
             icon: <EyeIcon size={20} />,
-            onClick: openRetroLogoModal,
+            onClick: openFirstLogoModal,
           },
         ]}
         month="February"
@@ -142,7 +137,7 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
         themeId={themeId}
         width={itemWidth}
       >
-        Redesigned the Phork logo
+        Designed the first Phork logo
       </TimelineItem>
       <TimelineItem
         colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
@@ -172,11 +167,6 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
       <TimelineItem
         colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
         links={[
-          {
-            id: 'twitter',
-            icon: <TwitterIcon size={19} />,
-            url: 'https://twitter.com/phorklabs/status/447954219610292224',
-          },
           {
             id: 'github',
             icon: <GithubIcon size={19} />,
@@ -278,15 +268,35 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
           {
             id: 'logo',
             icon: <EyeIcon size={20} />,
-            onClick: openCurrentLogoModal,
+            onClick: openSecondLogoModal,
           },
         ]}
         month="October"
         position={itemPosition}
+        tags={[{ id: 'retired', label: 'Retired' }]}
         themeId={themeId}
         width={itemWidth}
       >
-        Redesigned the Phork logo
+        Redesigned the Phork logo (v2)
+      </TimelineItem>
+      <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
+        2026
+      </TimelineLabel>
+      <TimelineItem
+        colorId={`P${(++counter * 5).toString().padStart(2, '0')}` as ThemeColorIds}
+        links={[
+          {
+            id: 'logo',
+            icon: <EyeIcon size={20} />,
+            onClick: openThirdLogoModal,
+          },
+        ]}
+        month="July"
+        position={itemPosition}
+        themeId={themeId}
+        width={itemWidth}
+      >
+        Redesigned the Phork logo (v3)
       </TimelineItem>
       <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
         NOW

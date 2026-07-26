@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect';
 import { LineLoader } from 'components/LineLoader';
 import { render } from '../utils';
 

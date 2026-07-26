@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { v4 as uuid } from 'uuid';
 import { SvgIconProps, useIconSize } from '@phork/phorkit';
-
 export function RetiredIcon({ title, titleId = uuid(), ...initProps }: SvgIconProps): React.ReactElement<SVGElement> {
   const props = useIconSize(initProps);
   return (

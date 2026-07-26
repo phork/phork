@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { v4 as uuid } from 'uuid';
 import { SvgIconProps, useIconSize } from '@phork/phorkit';
-
-export function PhorkIcon({ title, titleId = uuid(), ...initProps }: SvgIconProps): React.ReactElement<SVGElement> {
+export function PhorkVersion2Icon({
+  title,
+  titleId = uuid(),
+  ...initProps
+}: SvgIconProps): React.ReactElement<SVGElement> {
   const props = useIconSize(initProps);
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" aria-labelledby={titleId} {...props}>
@@ -55,4 +58,4 @@ export function PhorkIcon({ title, titleId = uuid(), ...initProps }: SvgIconProp
   );
 }
 
-PhorkIcon.displayName = 'PhorkIcon';
+PhorkVersion2Icon.displayName = 'PhorkVersion2Icon';

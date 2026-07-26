@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { v4 as uuid } from 'uuid';
 import { SvgIconProps, useIconSize } from '@phork/phorkit';
-
-export function PhorkRetroIcon({
+export function PhorkVersion1Icon({
   title,
   titleId = uuid(),
   ...initProps
@@ -19,4 +18,4 @@ export function PhorkRetroIcon({
   );
 }
 
-PhorkRetroIcon.displayName = 'PhorkRetroIcon';
+PhorkVersion1Icon.displayName = 'PhorkVersion1Icon';

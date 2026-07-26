@@ -1,8 +1,7 @@
-import '@testing-library/jest-dom/extend-expect';
 import { TimelineHeader } from 'components/TimelineHeader';
 import { render } from '../utils';
 
-jest.mock('components/CreditsButton', () => {
+vi.mock('components/CreditsButton', () => {
   return {
     CreditsButton: () => 'CreditsButton',
   };

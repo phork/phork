@@ -1,8 +1,7 @@
-import '@testing-library/jest-dom/extend-expect';
 import { CreditsModal } from 'modals/CreditsModal';
 import { render } from '../utils';
 
-jest.mock('components/IconCredits', () => {
+vi.mock('components/IconCredits', () => {
   return {
     IconCredits: () => 'IconCredits',
   };

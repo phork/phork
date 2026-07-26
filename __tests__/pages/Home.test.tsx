@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect';
 import Home from 'pages/Home';
 import { render } from '../utils';
 

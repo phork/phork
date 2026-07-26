@@ -1,8 +1,7 @@
-import '@testing-library/jest-dom/extend-expect';
 import Timeline from 'pages/Timeline';
 import { render } from '../utils';
 
-jest.mock('components/TimelineHeader', () => {
+vi.mock('components/TimelineHeader', () => {
   return {
     TimelineHeader: () => 'TimelineHeader',
   };

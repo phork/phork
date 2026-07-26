@@ -1,7 +1,7 @@
 import { ModalLoader } from 'modals/ModalLoader';
 import { render } from '../utils';
 
-jest.mock('components/LineLoader', () => {
+vi.mock('components/LineLoader', () => {
   return {
     LineLoader: () => 'LineLoader',
   };

@@ -93,12 +93,13 @@
         "ecmaFeatures": {
           "jsx": true
         },
-        "project": ["./tsconfig.json"]
+        "project": ["./tsconfig.json", "./__tests__/tsconfig.json", "./tsconfig.node.json"]
       },
       "plugins": ["@typescript-eslint", "react", "prettier", "json", "react-hooks", "jsx-a11y", "import"],
       "rules": {
         "arrow-parens": 0,
         "camelcase": 1,
+        "import/no-unresolved": "off",
         "import/newline-after-import": ["error", { "count": 1 }],
         "import/no-absolute-path": 2,
         "import/no-named-default": 0,

@@ -1,1 +1,1 @@
-export type LogoGeneration = 'current' | 'retro';
+export type LogoGeneration = 'first' | 'second' | 'third';
