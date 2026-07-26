@@ -9,10 +9,10 @@ import Home from 'pages/Home';
 import Timeline from 'pages/Timeline';
 
 const ViewportPaper = styled(Paper)`
-  width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  max-height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
+  min-height: 100dvh;
+  max-height: 100dvh;
 `;
 
 export type AppContentProps = Omit<PaperProps, 'children' | 'color' | 'scrollable'>;
