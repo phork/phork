@@ -3,7 +3,7 @@ import { Modal, ModalBody, ModalHeader, Rhythm, ModalProps, Flex } from '@phork/
 import { LogoGeneration } from 'types/logo';
 import { PhorkVersion1Icon } from 'icons/PhorkVersion1Icon';
 import { PhorkVersion2Icon } from 'icons/PhorkVersion2Icon';
-import { PhorkVersion3Icon } from 'icons/PhorkVersion3Icon';
+import { PhorkIcon } from 'components/PhorkIcon';
 
 export type LogoModalProps = Omit<ModalProps, 'children' | 'focusable' | 'size'> & {
   generation: LogoGeneration;
@@ -13,7 +13,7 @@ export type LogoModalProps = Omit<ModalProps, 'children' | 'focusable' | 'size'>
 const ICONS = {
   first: PhorkVersion1Icon,
   second: PhorkVersion2Icon,
-  third: PhorkVersion3Icon,
+  third: PhorkIcon,
 };
 
 export const LogoModal = ({ generation, id: initId, ...props }: LogoModalProps): JSX.Element => {

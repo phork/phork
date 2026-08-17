@@ -291,12 +291,12 @@ export const Timeline = ({ themeId: initThemeId, width = 800 }: TimelineProps): 
             onClick: openThirdLogoModal,
           },
         ]}
-        month="July"
+        month="August"
         position={itemPosition}
         themeId={themeId}
         width={itemWidth}
       >
-        Redesigned the Phork logo (v3)
+        Updated the Phork logo (v3)
       </TimelineItem>
       <TimelineLabel position={labelPosition} themeId={themeId} width={labelWidth}>
         NOW

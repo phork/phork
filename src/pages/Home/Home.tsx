@@ -1,7 +1,7 @@
 import { Fragment, memo } from 'react';
 import { Helmet } from 'react-helmet';
 import { PagePaper } from 'components/PagePaper';
-import { PhorkVersion3Icon as PhorkIcon } from '../../icons/PhorkVersion3Icon';
+import { PhorkIcon } from 'components/PhorkIcon';
 
 export const HomePage = memo(function HomePage() {
   return (
